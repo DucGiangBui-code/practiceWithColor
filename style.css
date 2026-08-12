@@ -1,0 +1,127 @@
+/* ==========================================================================
+   1. MÃ KHỞI ĐỘNG CÓ SẴN (CHẾ ĐỘ XEM DI ĐỘNG - MOBILE VIEW)
+   ========================================================================== */
+body {
+  background-color: #dedede;
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px; /* Thu nhỏ tiêu đề trên mobile để tránh tràn dòng */
+  margin: 15px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 22px;
+}
+
+ul,
+p {
+  font-family: Arial, sans-serif;
+}
+
+/* Chỉnh lại cỡ chữ đoạn văn gốc (25px quá to trên mobile, hạ xuống 16px) */
+p {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  padding: 0 10px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Cấu trúc phần Main chứa các khối Màu sắc */
+main {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center; /* Căn giữa các div con khi chuyển sang chế độ ngang */
+}
+
+/* CHẾ ĐỘ DI ĐỘNG: Mặc định mỗi div chiếm 1 hàng dọc full-width */
+div {
+  display: block;
+  width: 90%; /* Chiếm phần lớn chiều rộng màn hình mobile */
+  margin: 15px auto; /* Tự động căn giữa khối div */
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Định dạng ảnh nằm gọn, căn giữa trong div trên mobile */
+div img {
+  width: 100%;
+  max-width: 200px; /* Kích thước tối đa theo width="200" ở HTML */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Chữ nhãn tên màu (Red, Orange, Yellow...) bên trong div */
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* ==========================================================================
+   2. TRUY VẤN #1: Chế độ xem máy tính bảng (Tablet View)
+   Kích hoạt tự động ở kích thước màn hình từ 772px trở lên
+   ========================================================================== */
+@media screen and (min-width: 772px) {
+  /* Đổi cỡ chữ lớn hơn một chút cho phù hợp với máy tính bảng */
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  div {
+    display: inline-block; /* CHỈNH SỬA: Giúp các div có thể nằm ngang cạnh nhau */
+    width: 45%; /* YÊU CẦU: divs bằng 45% chiều rộng của chế độ xem */
+    vertical-align: top; /* Căn lề trên để các hộp màu đều hàng */
+    margin: 2%; /* Khoảng cách vừa phải để 2 div nằm vừa khít 1 hàng */
+  }
+
+  div img {
+    max-width: 100%;
+    max-height: 30vh; /* YÊU CẦU: hình ảnh không quá 30% chiều cao của chế độ xem */
+    width: auto; /* Đảm bảo ảnh tự co giãn, không bị méo/bẹp hình */
+  }
+}
+
+/* ==========================================================================
+   3. TRUY VẤN #2: Chế độ xem màn hình lớn (Desktop View)
+   Kích hoạt tự động ở kích thước màn hình từ 998px trở lên
+   ========================================================================== */
+@media screen and (min-width: 998px) {
+  /* Tăng kích thước chữ tiêu đề to rõ trên màn hình máy tính lớn */
+  h1 {
+    font-size: 36px;
+  }
+
+  div {
+    width: 30%; /* YÊU CẦU: divs bằng 30% chiều rộng của chế độ xem */
+    margin: 1.5%; /* Cân đối lại margin để 3 div nằm vừa vặn trên 1 hàng */
+  }
+
+  /* Đúng yêu cầu: Không cần thêm bất kỳ thay đổi nào khác tại đây */
+}
